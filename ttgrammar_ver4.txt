@@ -1,0 +1,33 @@
+punct punct default
+punct sqt '
+punct dqt "
+punct eq =
+punct uscr _
+punct dash -
+punct lcb {
+punct rcb }
+digit num default
+space spc default
+alpha word default
+alpha tstart TT
+punct colon :
+punct hash #
+alpha for for
+alpha next next
+Grammar: A
+A -> lcb F | tstart T| rcb A |punct A| word A | spc A | num A | sqt A | dqt A | eq A| uscr A |dash A | colon A | hash A| for A | next A|.
+T -> punct A |word A |spc A |num A |sqt A |dqt A |lcb A |rcb A |eq A |uscr A |dash A | colon A | hash A| for A | next A.
+F -> T | tstart B E A.
+E -> spc rcb|rcb.
+B -> eq D | hash C. 
+D -> spc H | H.
+H -> sqt S sqt | dqt U dqt| word N|num.
+N -> O P | .
+O -> uscr | dash | .
+P -> num N | word N |for N | next N.
+S -> dqt S |punct S| word S | spc S | num S | lcb S |rcb S |eq S |uscr S| dash S| colon S | hash S| for S | next S |.
+U -> sqt U |punct U| word U | spc U | num U | lcb U |rcb U |eq U |uscr U| dash U| colon U | hash U| for U | next U |.
+C -> spc G | G.
+G -> for I colon I|next.
+I -> spc word N | word N.
+

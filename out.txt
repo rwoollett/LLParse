@@ -1,0 +1,359 @@
+Terminal Symbols
+digit num default
+alpha tstart TT
+alpha fi fi
+alpha if if
+alpha for for
+alpha else else
+alpha next next
+alpha word default
+alpha elsif elsif
+punct ex !
+punct dqt "
+punct hash #
+punct sqt '
+punct dash -
+punct colon :
+punct lt <
+punct eq =
+punct gt >
+punct esc \
+punct uscr _
+punct lcb {
+punct rcb }
+punct punct default
+space spc default
+Parse table: A
+A | lcb # lcb tstart B rcb A 
+A | eq # T A 
+A | ex # T A 
+A | gt # T A 
+A | lt # T A 
+A | esc # T A 
+A | num # T A 
+A | rcb # T A 
+A | spc # T A 
+A | dash # T A 
+A | hash # T A 
+A | uscr # T A 
+A | colon # T A 
+A | punct # T A 
+A | fi # W A 
+A | if # W A 
+A | for # W A 
+A | else # W A 
+A | next # W A 
+A | word # W A 
+A | elsif # W A 
+A | tstart # W A 
+A | dqt # Q A 
+A | sqt # Q A 
+A | $ # ~Esp 
+B | eq # eq SP WR 
+B | hash # hash SP STM 
+Q | sqt # sqt 
+Q | dqt # dqt 
+T | esc # esc lcb 
+T | punct # punct 
+T | spc # spc 
+T | num # num 
+T | rcb # rcb 
+T | eq # eq 
+T | uscr # uscr 
+T | dash # dash 
+T | colon # colon 
+T | hash # hash 
+T | lt # lt 
+T | gt # gt 
+T | ex # ex 
+W | word # word 
+W | tstart # tstart 
+W | for # for 
+W | next # next 
+W | if # if 
+W | fi # fi 
+W | elsif # elsif 
+W | else # else 
+SP | spc # spc 
+SP | eq # ~Esp 
+SP | ex # ~Esp 
+SP | fi # ~Esp 
+SP | gt # ~Esp 
+SP | if # ~Esp 
+SP | lt # ~Esp 
+SP | dqt # ~Esp 
+SP | for # ~Esp 
+SP | num # ~Esp 
+SP | rcb # ~Esp 
+SP | sqt # ~Esp 
+SP | else # ~Esp 
+SP | next # ~Esp 
+SP | word # ~Esp 
+SP | colon # ~Esp 
+SP | elsif # ~Esp 
+WR | sqt # sqt SQS sqt SP 
+WR | dqt # dqt DQS dqt SP 
+WR | word # word VAR SP 
+WR | num # num SP 
+DQS | eq # T DQS 
+DQS | ex # T DQS 
+DQS | gt # T DQS 
+DQS | lt # T DQS 
+DQS | esc # T DQS 
+DQS | num # T DQS 
+DQS | rcb # T DQS 
+DQS | spc # T DQS 
+DQS | dash # T DQS 
+DQS | hash # T DQS 
+DQS | uscr # T DQS 
+DQS | colon # T DQS 
+DQS | punct # T DQS 
+DQS | fi # W DQS 
+DQS | if # W DQS 
+DQS | for # W DQS 
+DQS | else # W DQS 
+DQS | next # W DQS 
+DQS | word # W DQS 
+DQS | elsif # W DQS 
+DQS | tstart # W DQS 
+DQS | sqt # sqt DQS 
+DQS | dqt # ~Esp 
+FBD | lcb # lcb tstart SFBD 
+FBD | eq # T FBD 
+FBD | ex # T FBD 
+FBD | gt # T FBD 
+FBD | lt # T FBD 
+FBD | esc # T FBD 
+FBD | num # T FBD 
+FBD | rcb # T FBD 
+FBD | spc # T FBD 
+FBD | dash # T FBD 
+FBD | hash # T FBD 
+FBD | uscr # T FBD 
+FBD | colon # T FBD 
+FBD | punct # T FBD 
+FBD | fi # W FBD 
+FBD | if # W FBD 
+FBD | for # W FBD 
+FBD | else # W FBD 
+FBD | next # W FBD 
+FBD | word # W FBD 
+FBD | elsif # W FBD 
+FBD | tstart # W FBD 
+FBD | dqt # Q FBD 
+FBD | sqt # Q FBD 
+OSV | uscr # uscr 
+OSV | dash # dash 
+OSV | fi # ~Esp 
+OSV | if # ~Esp 
+OSV | for # ~Esp 
+OSV | num # ~Esp 
+OSV | else # ~Esp 
+OSV | next # ~Esp 
+OSV | word # ~Esp 
+OSV | elsif # ~Esp 
+OSV | tstart # ~Esp 
+SQS | eq # T SQS 
+SQS | ex # T SQS 
+SQS | gt # T SQS 
+SQS | lt # T SQS 
+SQS | esc # T SQS 
+SQS | num # T SQS 
+SQS | rcb # T SQS 
+SQS | spc # T SQS 
+SQS | dash # T SQS 
+SQS | hash # T SQS 
+SQS | uscr # T SQS 
+SQS | colon # T SQS 
+SQS | punct # T SQS 
+SQS | fi # W SQS 
+SQS | if # W SQS 
+SQS | for # W SQS 
+SQS | else # W SQS 
+SQS | next # W SQS 
+SQS | word # W SQS 
+SQS | elsif # W SQS 
+SQS | tstart # W SQS 
+SQS | dqt # dqt SQS 
+SQS | sqt # ~Esp 
+STM | for # for AVAR colon AVAR rcb FBD 
+STM | if # if AVAR COND AVAR rcb IFBD 
+VAR | fi # OSV VARE 
+VAR | if # OSV VARE 
+VAR | for # OSV VARE 
+VAR | num # OSV VARE 
+VAR | dash # OSV VARE 
+VAR | else # OSV VARE 
+VAR | next # OSV VARE 
+VAR | uscr # OSV VARE 
+VAR | word # OSV VARE 
+VAR | elsif # OSV VARE 
+VAR | tstart # OSV VARE 
+VAR | eq # ~Esp 
+VAR | ex # ~Esp 
+VAR | gt # ~Esp 
+VAR | lt # ~Esp 
+VAR | rcb # ~Esp 
+VAR | spc # ~Esp 
+VAR | colon # ~Esp 
+AVAR | spc # spc word VAR SP 
+AVAR | word # word VAR SP 
+COND | lt # lt OCEQ 
+COND | gt # gt OCEQ 
+COND | ex # ex OCEQ 
+COND | eq # eq OCEQ 
+IFBD | lcb # lcb tstart SIFBD 
+IFBD | eq # T IFBD 
+IFBD | ex # T IFBD 
+IFBD | gt # T IFBD 
+IFBD | lt # T IFBD 
+IFBD | esc # T IFBD 
+IFBD | num # T IFBD 
+IFBD | rcb # T IFBD 
+IFBD | spc # T IFBD 
+IFBD | dash # T IFBD 
+IFBD | hash # T IFBD 
+IFBD | uscr # T IFBD 
+IFBD | colon # T IFBD 
+IFBD | punct # T IFBD 
+IFBD | fi # W IFBD 
+IFBD | if # W IFBD 
+IFBD | for # W IFBD 
+IFBD | else # W IFBD 
+IFBD | next # W IFBD 
+IFBD | word # W IFBD 
+IFBD | elsif # W IFBD 
+IFBD | tstart # W IFBD 
+IFBD | dqt # Q IFBD 
+IFBD | sqt # Q IFBD 
+OCEQ | eq # eq 
+OCEQ | spc # ~Esp 
+OCEQ | word # ~Esp 
+SFBD | eq # eq SP WR rcb FBD 
+SFBD | hash # hash SP FBDSTM 
+VARE | num # num VAR 
+VARE | fi # W VAR 
+VARE | if # W VAR 
+VARE | for # W VAR 
+VARE | else # W VAR 
+VARE | next # W VAR 
+VARE | word # W VAR 
+VARE | elsif # W VAR 
+VARE | tstart # W VAR 
+SIFBD | eq # eq SP WR rcb IFBD 
+SIFBD | hash # hash SP IFBDSTM 
+SIFELBD | eq # eq SP WR rcb IFELBD 
+SIFELBD | hash # hash SP IFELBDSTM 
+IFBDSTM | fi # fi SP 
+IFBDSTM | elsif # elsif AVAR COND AVAR rcb EIFBD 
+IFBDSTM | else # else SP rcb IFELBD 
+IFBDSTM | if # STM rcb IFBD 
+IFBDSTM | for # STM rcb IFBD 
+IFELBDSTM | fi # fi SP 
+IFELBDSTM | if # STM rcb IFELBD 
+IFELBDSTM | for # STM rcb IFELBD 
+IFELBD | lcb # lcb tstart SIFELBD 
+IFELBD | eq # T IFELBD 
+IFELBD | ex # T IFELBD 
+IFELBD | gt # T IFELBD 
+IFELBD | lt # T IFELBD 
+IFELBD | esc # T IFELBD 
+IFELBD | num # T IFELBD 
+IFELBD | rcb # T IFELBD 
+IFELBD | spc # T IFELBD 
+IFELBD | dash # T IFELBD 
+IFELBD | hash # T IFELBD 
+IFELBD | uscr # T IFELBD 
+IFELBD | colon # T IFELBD 
+IFELBD | punct # T IFELBD 
+IFELBD | fi # W IFELBD 
+IFELBD | if # W IFELBD 
+IFELBD | for # W IFELBD 
+IFELBD | else # W IFELBD 
+IFELBD | next # W IFELBD 
+IFELBD | word # W IFELBD 
+IFELBD | elsif # W IFELBD 
+IFELBD | tstart # W IFELBD 
+IFELBD | dqt # Q IFELBD 
+IFELBD | sqt # Q IFELBD 
+EIFBD | lcb # lcb tstart SIFBD 
+EIFBD | eq # T IFBD 
+EIFBD | ex # T IFBD 
+EIFBD | gt # T IFBD 
+EIFBD | lt # T IFBD 
+EIFBD | esc # T IFBD 
+EIFBD | num # T IFBD 
+EIFBD | rcb # T IFBD 
+EIFBD | spc # T IFBD 
+EIFBD | dash # T IFBD 
+EIFBD | hash # T IFBD 
+EIFBD | uscr # T IFBD 
+EIFBD | colon # T IFBD 
+EIFBD | punct # T IFBD 
+EIFBD | fi # W IFBD 
+EIFBD | if # W IFBD 
+EIFBD | for # W IFBD 
+EIFBD | else # W IFBD 
+EIFBD | next # W IFBD 
+EIFBD | word # W IFBD 
+EIFBD | elsif # W IFBD 
+EIFBD | tstart # W IFBD 
+EIFBD | dqt # Q IFBD 
+EIFBD | sqt # Q IFBD 
+FBDSTM | next # next SP 
+FBDSTM | if # STM rcb FBD 
+FBDSTM | for # STM rcb FBD 
+Firsts
+A | eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word ~Esp colon elsif tstart punct 
+B | eq hash 
+Q | dqt sqt 
+T | eq ex gt lt esc num rcb spc dash hash uscr colon punct 
+W | fi if for else next word elsif tstart 
+SP | spc ~Esp 
+WR | dqt num sqt word 
+DQS | eq ex fi gt if lt esc for num rcb spc sqt dash else hash next uscr word ~Esp colon elsif tstart punct 
+FBD | eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word colon elsif tstart punct 
+OSV | dash uscr ~Esp 
+SQS | eq ex fi gt if lt dqt esc for num rcb spc dash else hash next uscr word ~Esp colon elsif tstart punct 
+STM | if for 
+VAR | fi if for num dash else next uscr word ~Esp elsif tstart 
+AVAR | spc word 
+COND | eq ex gt lt 
+IFBD | eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word colon elsif tstart punct 
+OCEQ | eq ~Esp 
+SFBD | eq hash 
+VARE | fi if for num else next word elsif tstart 
+SIFBD | eq hash 
+SIFELBD | eq hash 
+IFBDSTM | fi if for else elsif 
+IFELBDSTM | fi if for 
+IFELBD | eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word colon elsif tstart punct 
+EIFBD | eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word colon elsif tstart punct 
+FBDSTM | if for next 
+Follows
+A | $ 
+B | rcb 
+Q | $ eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word colon elsif tstart punct 
+T | $ eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word colon elsif tstart punct 
+W | $ eq ex fi gt if lt dqt esc for lcb num rcb spc sqt dash else hash next uscr word colon elsif tstart punct 
+SP | eq ex fi gt if lt dqt for num rcb sqt else next word colon elsif 
+WR | rcb 
+DQS | dqt 
+FBD | rcb 
+OSV | fi if for num else next word elsif tstart 
+SQS | sqt 
+STM | rcb 
+VAR | eq ex gt lt rcb spc colon 
+AVAR | eq ex gt lt rcb colon 
+COND | spc word 
+IFBD | rcb 
+OCEQ | spc word 
+SFBD | rcb 
+VARE | eq ex gt lt rcb spc colon 
+SIFBD | rcb 
+SIFELBD | rcb 
+IFBDSTM | rcb 
+IFELBDSTM | rcb 
+IFELBD | rcb 
+EIFBD | rcb 
+FBDSTM | rcb 

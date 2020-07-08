@@ -1,0 +1,24 @@
+punct punct default
+punct sqt '
+punct dqt "
+punct eq =
+punct uscr _
+punct dash -
+punct lcb {
+punct rcb }
+digit num default
+space spc default
+alpha word default
+alpha tstart TT
+Grammar: A
+A -> lcb F | tstart T| rcb A |punct A| word A | spc A | num A | sqt A | dqt A |eq A|uscr A|dash A|.
+T -> punct A|word A|spc A|num A|sqt A|dqt A|lcb A|rcb A|eq A|uscr A|dash A.
+F -> T | tstart B E A.
+E -> spc rcb|rcb.
+B -> eq D. 
+D -> spc word N | word N.
+N -> O P | .
+O -> uscr | dash | .
+P -> num N | word N.
+
+

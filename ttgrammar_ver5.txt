@@ -1,0 +1,45 @@
+punct punct default
+punct sqt '
+punct dqt "
+punct eq =
+punct uscr _
+punct dash -
+punct lcb {
+punct rcb }
+digit num default
+space spc default
+alpha word default
+alpha tstart TT
+punct colon :
+punct hash #
+alpha for for
+alpha next next
+alpha if if
+alpha fi fi
+alpha elsif elsif
+alpha else else
+punct lt <
+punct gt >
+punct ex !
+punct esc \
+Grammar: A
+A -> lcb F | tstart T| rcb A |punct A| word A | spc A | num A | sqt A | dqt A | eq A| uscr A |dash A | colon A | hash A| for A | next A| if A | fi A| elsif A | else A| lt A| gt A | ex A|.
+T -> punct A |word A |spc A |num A |sqt A |dqt A |lcb A |rcb A |eq A |uscr A |dash A | colon A | hash A| for A | next A| if A | fi A| elsif A | else A | lt A| gt A | ex A.
+F -> T | tstart B rcb A.
+B -> eq D | hash C. 
+D -> spc H | H.
+H -> sqt S sqt J| dqt U dqt J| word N J|num J.
+J -> spc|.
+N -> O P | .
+O -> uscr | dash | .
+P -> num N | word N |for N | next N| if N | fi N| elsif N | else N.
+S -> dqt S |punct S| word S | spc S | num S | lcb S |rcb S |eq S |uscr S| dash S| colon S | hash S| for S | next S | if S | fi S| elsif S | else S | lt S| gt S | ex S|.
+U -> sqt U |punct U| word U | spc U | num U | lcb U |rcb U |eq U |uscr U| dash U| colon U | hash U| for U | next U | if U | fi U| elsif U | else U | lt U| gt U | ex U |.
+C -> spc G | G.
+G -> for I colon I| next J| if I Y I| elsif I Y I| else J |fi J.
+I -> spc word N J | word N J.
+Y -> lt V|gt V|ex V|eq V.
+V -> eq|.
+
+
+

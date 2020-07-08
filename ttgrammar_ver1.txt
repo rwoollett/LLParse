@@ -1,0 +1,14 @@
+m = psqt|n = number| o = pdqt| p = punct | s = space | t = tbegin | w = word| u = tstart| v = tend| e = pequal| i = puscr|j = pdash
+
+A -> u F | t T| v A |p A| w A | s A | n A | m A | o A |e A|i A|j A|.
+T -> p A|w A|s A|n A|m A|o A|u A|v A|e A|i A|j A.
+F -> T | t B E A.
+E -> s v|v.
+B -> e D.
+D -> s V | V.
+V -> w N.
+N -> O P | .
+O -> i | j | .
+P -> n N | w N.
+
+

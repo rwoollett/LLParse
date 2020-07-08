@@ -1,0 +1,52 @@
+punct punct default
+punct sqt '
+punct dqt "
+punct eq =
+punct uscr _
+punct dash -
+punct lcb {
+punct rcb }
+digit num default
+space spc default
+alpha word default
+alpha tstart TT
+punct colon :
+punct hash #
+alpha for for
+alpha next next
+alpha if if
+alpha fi fi
+alpha elsif elsif
+alpha else else
+punct lt <
+punct gt >
+punct ex !
+punct esc \
+Grammar: A
+A -> lcb tstart B rcb A | T A | W A |Q A|.
+T -> esc lcb | punct | spc | num | rcb | eq | uscr | dash | colon | hash | lt | gt | ex.
+W -> word | tstart | for | next | if | fi | elsif | else.
+Q -> sqt | dqt.
+B -> eq SP WR | hash SP STM. 
+WR -> sqt SQS sqt SP| dqt DQS dqt SP| word VAR SP|num SP.
+SP -> spc|.
+VAR -> OSV VARE | .
+OSV -> uscr | dash | .
+VARE -> num VAR | W VAR.
+SQS -> T SQS|W SQS|dqt SQS|.
+DQS -> T DQS|W DQS|sqt DQS|.
+STM -> for AVAR colon AVAR rcb FBD| if AVAR COND AVAR rcb IFBD.
+AVAR -> spc word VAR SP | word VAR SP.
+COND -> lt OCEQ|gt OCEQ|ex OCEQ|eq OCEQ.
+OCEQ -> eq|.
+FBD -> lcb tstart SFBD | T FBD | W FBD |Q FBD.
+SFBD -> eq SP WR rcb FBD | hash SP FBDSTM.
+FBDSTM -> next SP|STM rcb FBD.
+IFBD -> lcb tstart SIFBD  | T IFBD | W IFBD |Q IFBD.
+SIFBD -> eq SP WR rcb IFBD | hash SP IFBDSTM.
+IFBDSTM -> fi SP|elsif AVAR COND AVAR rcb EIFBD|else SP rcb IFELBD|STM rcb IFBD.
+EIFBD -> lcb tstart SIFBD  | T IFBD | W IFBD |Q IFBD.
+IFELBD -> lcb tstart SIFELBD  | T IFELBD | W IFELBD |Q IFELBD.
+SIFELBD -> eq SP WR rcb IFELBD | hash SP IFELBDSTM.
+IFELBDSTM -> fi SP|STM rcb IFELBD.
+

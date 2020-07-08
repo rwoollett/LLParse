@@ -1,0 +1,13 @@
+m   = psqt|n = number| o = pdqt| p = punct | s = space | t = tbegin | w = word 
+
+A -> p F A | w A | s A | n A | m A | o A |t T|.
+T -> p A|w A|s A|n A|m A|o A|t A.
+F -> t B s p.
+B -> p D.
+D -> s V | V.
+V -> w N.
+N -> O P Q R | .
+O -> p | .
+P -> n N | w N.
+Q -> m.
+R -> o|.
