@@ -1,5 +1,5 @@
 ﻿
-#include "../LLScanner/Common/io_utility.h"
+#include "Common/io_utility.h"
 #include "llparsetable.h"
 #include "parsegrammar.h"
 #include <sstream>

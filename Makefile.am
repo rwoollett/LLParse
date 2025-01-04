@@ -3,12 +3,12 @@ ACLOCAL_AMFLAGS = -I m4
 AM_CPPFLAGS = -I$(srcdir)
 
 lib_LTLIBRARIES = libscanner.la
-libscanner_la_SOURCES = ../LLScanner/Scanner/scanner.cpp \
-                        ../LLScanner/Scanner/scanner.h \
-                        ../LLScanner/FileScan/FileScan.cpp \
-                        ../LLScanner/FileScan/FileScan.h \
-                        ../LLScanner/Common/io_utility.cpp \
-                        ../LLScanner/Common/io_utility.h
+libscanner_la_SOURCES = Scanner/scanner.cpp \
+                        Scanner/scanner.h \
+                        FileScan/FileScan.cpp \
+                        FileScan/FileScan.h \
+                        Common/io_utility.cpp \
+                        Common/io_utility.h
 
 
 libscanner_la_LDFLAGS = -version-info 1:0:1
@@ -20,8 +20,8 @@ llparse_SOURCES = src/main.cpp \
                   src/llparsetable.h \
                   src/parsegrammar.cpp \
                   src/parsegrammar.h \
-                   ../LLScanner/Utilities/Utilities.cpp \
-                   ../LLScanner/Utilities/Utilities.h
+                   Utilities/Utilities.cpp \
+                   Utilities/Utilities.h
 
 # testprog_LDFLAGS = $(CPPUTEST_LIBS)
 llparse_LDADD =  libscanner.la $(EXPAT_LIBS)

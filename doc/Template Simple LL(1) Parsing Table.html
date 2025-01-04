@@ -1,0 +1,91 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href="Template%20Simple%20LL(1)%20Parsing%20Table_files/default.css" title="default" rel="stylesheet" type="text/css">
+<title>LL(1) Parsing Table</title>
+</head>
+<body>
+
+<table class="grammar" align="left"><caption class="grammar"><a target="_top" href="http://smlweb.cpsc.ucalgary.ca/raw-grammar.php?grammar=A+-%3E+p+A2+A%7Cw+A%7Cs+A%7Cd+A%7C.%0AA2+-%3E+b+B+s+p%7C.%0AB+-%3E+p+D.%0AD+-%3E+s+V+%7C+V.%0AV+-%3E+w+V2.%0AV2+-%3E+V3+V4%7C.%0AV3+-%3E+p+%7C.%0AV4+-%3E+d+V2+%7C+w+V2.%0A%0A&amp;substs=">Grammar</a></caption><tbody><tr><td>
+A →</td><td> p A2 A</td></tr><tr><td align="right">|</td><td>w A</td></tr><tr><td align="right">|</td><td>s A</td></tr><tr><td align="right">|</td><td>d A</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+A2 →</td><td> b B s p</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+B →</td><td> p D.</td></tr><tr><td>
+D →</td><td> s V </td></tr><tr><td align="right">|</td><td> V.</td></tr><tr><td>
+V →</td><td> w V2.</td></tr><tr><td>
+V2 →</td><td> V3 V4</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+V3 →</td><td> p </td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+V4 →</td><td> d V2 </td></tr><tr><td align="right">|</td><td> w V2.</td></tr><tr><td>
+
+</td></tr></tbody></table><table class="parse_table" border="1">
+<tbody><tr><td></td><th><terminal>$</terminal></th><th><terminal>w</terminal></th><th><terminal>d</terminal></th><th><terminal>p</terminal></th><th><terminal>s</terminal></th><th><terminal>b</terminal></th></tr>
+<tr><th><nonterm>A</nonterm></th>
+<td><nonterm>A</nonterm> → &amp;epsilon</td>
+<td><nonterm>A</nonterm> → <term>w</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>d</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>p</term> <nonterm>A2</nonterm> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>s</term> <nonterm>A</nonterm></td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>A2</nonterm></th>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → <term>b</term> <nonterm>B</nonterm> <term>s</term> <term>p</term></td>
+</tr>
+<tr><th><nonterm>B</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>B</nonterm> → <term>p</term> <nonterm>D</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>D</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>D</nonterm> → <nonterm>V</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>D</nonterm> → <term>s</term> <nonterm>V</nonterm></td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>V</nonterm> → <term>w</term> <nonterm>V2</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V2</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>V2</nonterm> → <nonterm>V3</nonterm> <nonterm>V4</nonterm></td>
+<td><nonterm>V2</nonterm> → <nonterm>V3</nonterm> <nonterm>V4</nonterm></td>
+<td><nonterm>V2</nonterm> → <nonterm>V3</nonterm> <nonterm>V4</nonterm></td>
+<td><nonterm>V2</nonterm> → &amp;epsilon</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V3</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>V3</nonterm> → &amp;epsilon</td>
+<td><nonterm>V3</nonterm> → &amp;epsilon</td>
+<td><nonterm>V3</nonterm> → <term>p</term></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V4</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>V4</nonterm> → <term>w</term> <nonterm>V2</nonterm></td>
+<td><nonterm>V4</nonterm> → <term>d</term> <nonterm>V2</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table>
+<hr>
+
+Return home to <a target="_top" href="http://smlweb.cpsc.ucalgary.ca/start.html">enter a new grammar</a>.
+
+
+
+</body></html>

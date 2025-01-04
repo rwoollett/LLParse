@@ -8,8 +8,8 @@
 #ifndef PARSEGRAMMAR_H 
 #define PARSEGRAMMAR_H 
  
-#include "../LLScanner/Common/constants.h"
-#include "../LLScanner/Scanner/scanner.h"
+#include "Common/constants.h"
+#include "Scanner/scanner.h"
 #include "llparsetable.h"
 #include <set>
 #include <vector>

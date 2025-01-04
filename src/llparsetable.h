@@ -12,7 +12,7 @@
 #include <vector>
 #include <stack>
 #include <string>
-#include "../LLScanner/Scanner/scanner.h"
+#include "Scanner/scanner.h"
 
 namespace llparse {
 	/**

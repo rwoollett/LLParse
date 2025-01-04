@@ -28,15 +28,15 @@ add_executable(LLParse
         src/llparsetable.h 
         src/parsegrammar.cpp 
         src/parsegrammar.h 
-         ../LLScanner/Utilities/Utilities.cpp
-         ../LLScanner/Utilities/Utilities.h
+        Utilities/Utilities.cpp
+        Utilities/Utilities.h
         )
 
 target_compile_features(LLParse PUBLIC cxx_std_17)
 
 target_include_directories(LLParse PRIVATE
         $<BUILD_INTERFACE:${LLParseGrammar_SOURCE_DIR}/src>
-        $<BUILD_INTERFACE:${LLParseGrammar_SOURCE_DIR}/../LLScanner>
+        $<BUILD_INTERFACE:${LLParseGrammar_SOURCE_DIR}>
         )
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
@@ -56,12 +56,12 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 endif()
 
 add_library(LLScanner
-  ../LLScanner/Scanner/scanner.cpp 
-  ../LLScanner/Scanner/scanner.h 
-  ../LLScanner/FileScan/FileScan.cpp 
-  ../LLScanner/FileScan/FileScan.h 
-  ../LLScanner/Common/io_utility.cpp 
-  ../LLScanner/Common/io_utility.h
+  Scanner/scanner.cpp 
+  Scanner/scanner.h 
+  FileScan/FileScan.cpp 
+  FileScan/FileScan.h 
+  Common/io_utility.cpp 
+  Common/io_utility.h
 )
 
 target_compile_features(LLScanner PUBLIC cxx_std_17)
