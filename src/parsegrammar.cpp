@@ -13,7 +13,7 @@
 #include <set>
 #include <iterator>
 #include <algorithm>
-#include "../LLScanner/Common/io_utility.h"
+#include "Common/io_utility.h"
 
 #define __DEBUG2
 

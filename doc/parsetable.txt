@@ -1,0 +1,77 @@
+Parse table
+A | tstart # tstart F 
+A | tbegin # tbegin T 
+A | tend # tend A 
+A | punct # punct A 
+A | word # word A 
+A | space # space A 
+A | number # number A 
+A | psqt # psqt A 
+A | pdqt # pdqt A 
+A | pequal # pequal A 
+A | puscr # puscr A 
+A | pdash # pdash A 
+A | $ # ~Esp 
+T | punct # punct A 
+T | word # word A 
+T | space # space A 
+T | number # number A 
+T | psqt # psqt A 
+T | pdqt # pdqt A 
+T | tstart # tstart A 
+T | tend # tend A 
+T | pequal # pequal A 
+T | puscr # puscr A 
+T | pdash # pdash A 
+F | psqt # T 
+F | number # T 
+F | pdqt # T 
+F | punct # T 
+F | space # T 
+F | word # T 
+F | tstart # T 
+F | tend # T 
+F | pequal # T 
+F | puscr # T 
+F | pdash # T 
+F | tbegin # tbegin B E A 
+E | space # space tend 
+E | tend # tend 
+B | pequal # pequal D 
+D | space # space V 
+D | word # V 
+V | word # word N 
+N | number # O P 
+N | word # O P 
+N | puscr # O P 
+N | pdash # O P 
+N | space # ~Esp 
+N | tend # ~Esp 
+O | puscr # puscr 
+O | pdash # pdash 
+O | number # ~Esp 
+O | word # ~Esp 
+P | number # number N 
+P | word # word N 
+Firsts
+A | pequal puscr pdash psqt number pdqt punct space tbegin tstart tend word ~Esp 
+B | pequal 
+D | space word 
+E | space tend 
+F | pequal puscr pdash psqt number pdqt punct space tbegin tstart tend word 
+N | puscr pdash number word ~Esp 
+O | puscr pdash ~Esp 
+P | number word 
+T | pequal puscr pdash psqt number pdqt punct space tstart tend word 
+V | word 
+Follows
+A | $ 
+B | space tend 
+D | space tend 
+E | pequal puscr pdash psqt number pdqt punct space tbegin tstart tend word $ 
+F | $ 
+N | space tend 
+O | number word 
+P | space tend 
+T | $ 
+V | space tend 

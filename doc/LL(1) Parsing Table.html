@@ -1,0 +1,83 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href="LL(1)%20Parsing%20Table_files/default.css" title="default" rel="stylesheet" type="text/css">
+<title>LL(1) Parsing Table</title>
+</head>
+<body>
+
+<table class="grammar" align="left"><caption class="grammar"><a target="_top" href="http://smlweb.cpsc.ucalgary.ca/raw-grammar.php?grammar=S+-%3E+T.+%0AT+-%3E+isSpace+W%7CisPunc+S+%7CisDigit+D+%7CisAlpha+A+%7C.%0AA+-%3E+isAlpha+A%7CT1.%0AT1+-%3E+isSpace+S%7CisPunc+S%7CisDigit+S%7C.%0AD+-%3E+isDigit+D%7CT2.%0AT2+-%3E+isSpace+S%7CisPunc+S%7CisAlpha+S%7C.%0AW+-%3E+isSpace+W%7CT3.%0AT3+-%3E+isDigit+S%7CisPunc+S%7CisAlpha+S%7C.%0A%0A&amp;substs=">Grammar</a></caption><tbody><tr><td>
+S →</td><td> T.</td></tr><tr><td> 
+T →</td><td> isSpace W</td></tr><tr><td align="right">|</td><td>isPunc S </td></tr><tr><td align="right">|</td><td>isDigit D </td></tr><tr><td align="right">|</td><td>isAlpha A </td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+A →</td><td> isAlpha A</td></tr><tr><td align="right">|</td><td>T1.</td></tr><tr><td>
+T1 →</td><td> isSpace S</td></tr><tr><td align="right">|</td><td>isPunc S</td></tr><tr><td align="right">|</td><td>isDigit S</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+D →</td><td> isDigit D</td></tr><tr><td align="right">|</td><td>T2.</td></tr><tr><td>
+T2 →</td><td> isSpace S</td></tr><tr><td align="right">|</td><td>isPunc S</td></tr><tr><td align="right">|</td><td>isAlpha S</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+W →</td><td> isSpace W</td></tr><tr><td align="right">|</td><td>T3.</td></tr><tr><td>
+T3 →</td><td> isDigit S</td></tr><tr><td align="right">|</td><td>isPunc S</td></tr><tr><td align="right">|</td><td>isAlpha S</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+
+</td></tr></tbody></table><table class="parse_table" border="1">
+<tbody><tr><td></td><th><terminal>$</terminal></th><th><terminal>isAlpha</terminal></th><th><terminal>isPunc</terminal></th><th><terminal>isDigit</terminal></th><th><terminal>isSpace</terminal></th></tr>
+<tr><th><nonterm>S</nonterm></th>
+<td><nonterm>S</nonterm> → <nonterm>T</nonterm></td>
+<td><nonterm>S</nonterm> → <nonterm>T</nonterm></td>
+<td><nonterm>S</nonterm> → <nonterm>T</nonterm></td>
+<td><nonterm>S</nonterm> → <nonterm>T</nonterm></td>
+<td><nonterm>S</nonterm> → <nonterm>T</nonterm></td>
+</tr>
+<tr><th><nonterm>T</nonterm></th>
+<td><nonterm>T</nonterm> → &amp;epsilon</td>
+<td><nonterm>T</nonterm> → <term>isAlpha</term> <nonterm>A</nonterm></td>
+<td><nonterm>T</nonterm> → <term>isPunc</term> <nonterm>S</nonterm></td>
+<td><nonterm>T</nonterm> → <term>isDigit</term> <nonterm>D</nonterm></td>
+<td><nonterm>T</nonterm> → <term>isSpace</term> <nonterm>W</nonterm></td>
+</tr>
+<tr><th><nonterm>A</nonterm></th>
+<td><nonterm>A</nonterm> → <nonterm>T1</nonterm></td>
+<td><nonterm>A</nonterm> → <term>isAlpha</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <nonterm>T1</nonterm></td>
+<td><nonterm>A</nonterm> → <nonterm>T1</nonterm></td>
+<td><nonterm>A</nonterm> → <nonterm>T1</nonterm></td>
+</tr>
+<tr><th><nonterm>T1</nonterm></th>
+<td><nonterm>T1</nonterm> → &amp;epsilon</td>
+<td>&nbsp;</td>
+<td><nonterm>T1</nonterm> → <term>isPunc</term> <nonterm>S</nonterm></td>
+<td><nonterm>T1</nonterm> → <term>isDigit</term> <nonterm>S</nonterm></td>
+<td><nonterm>T1</nonterm> → <term>isSpace</term> <nonterm>S</nonterm></td>
+</tr>
+<tr><th><nonterm>D</nonterm></th>
+<td><nonterm>D</nonterm> → <nonterm>T2</nonterm></td>
+<td><nonterm>D</nonterm> → <nonterm>T2</nonterm></td>
+<td><nonterm>D</nonterm> → <nonterm>T2</nonterm></td>
+<td><nonterm>D</nonterm> → <term>isDigit</term> <nonterm>D</nonterm></td>
+<td><nonterm>D</nonterm> → <nonterm>T2</nonterm></td>
+</tr>
+<tr><th><nonterm>T2</nonterm></th>
+<td><nonterm>T2</nonterm> → &amp;epsilon</td>
+<td><nonterm>T2</nonterm> → <term>isAlpha</term> <nonterm>S</nonterm></td>
+<td><nonterm>T2</nonterm> → <term>isPunc</term> <nonterm>S</nonterm></td>
+<td>&nbsp;</td>
+<td><nonterm>T2</nonterm> → <term>isSpace</term> <nonterm>S</nonterm></td>
+</tr>
+<tr><th><nonterm>W</nonterm></th>
+<td><nonterm>W</nonterm> → <nonterm>T3</nonterm></td>
+<td><nonterm>W</nonterm> → <nonterm>T3</nonterm></td>
+<td><nonterm>W</nonterm> → <nonterm>T3</nonterm></td>
+<td><nonterm>W</nonterm> → <nonterm>T3</nonterm></td>
+<td><nonterm>W</nonterm> → <term>isSpace</term> <nonterm>W</nonterm></td>
+</tr>
+<tr><th><nonterm>T3</nonterm></th>
+<td><nonterm>T3</nonterm> → &amp;epsilon</td>
+<td><nonterm>T3</nonterm> → <term>isAlpha</term> <nonterm>S</nonterm></td>
+<td><nonterm>T3</nonterm> → <term>isPunc</term> <nonterm>S</nonterm></td>
+<td><nonterm>T3</nonterm> → <term>isDigit</term> <nonterm>S</nonterm></td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table>
+<hr>
+
+Return home to <a target="_top" href="http://smlweb.cpsc.ucalgary.ca/start.html">enter a new grammar</a>.
+
+
+
+</body></html>

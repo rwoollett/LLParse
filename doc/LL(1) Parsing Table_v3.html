@@ -1,0 +1,307 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link href="LL(1)%20Parsing%20Table_v3_files/default.css" title="default" rel="stylesheet" type="text/css">
+<title>LL(1) Parsing Table</title>
+</head>
+<body>
+
+<table class="grammar" align="left"><caption class="grammar"><a target="_top" href="http://smlweb.cpsc.ucalgary.ca/raw-grammar.php?grammar=A+-%3E+a+A2+A%7Cw+A%7Cs+A%7Ck+A%7Cd+A%7Ce+A%7Cc+A%7Cj+A%7Ci+A%7Cm+A%7Cf+A%7Cp+A%7C.%0AA2+-%3E+b+B+E%7C.%0AE+-%3E+s+c%7Cc.%0AB+-%3E+k+C+%7C+e+D.%0AC+-%3E+s+H+%7C+H.%0AD+-%3E+s+V+%7C+V.%0AV+-%3E+w+V2.%0AV2+-%3E+V3+V4%7C.%0AV3+-%3E+i+%7C+j+%7C.%0AV4+-%3E+d+V2+%7C+w+V2.%0AH+-%3E+V+H1+H2.%0AH1+-%3E+s+e%7Ce.%0AH2+-%3E+s+A7%7CA7.%0AA7+-%3E+f+A8+f+%7C+m+A9+m+%7C+d.%09%0AA8+-%3E+A10+A8%7Cm+A8%7C.%0AA9+-%3E+A10+A9%7Cf+A9%7C.%0AA10+-%3E+w+%7C+d+%7C+s+%7C+a+%7C+c+%7C+k+%7C+e+%7C+i+%7Cj+%7Cp.%0A&amp;substs=">Grammar</a></caption><tbody><tr><td>
+A →</td><td> a A2 A</td></tr><tr><td align="right">|</td><td>w A</td></tr><tr><td align="right">|</td><td>s A</td></tr><tr><td align="right">|</td><td>k A</td></tr><tr><td align="right">|</td><td>d A</td></tr><tr><td align="right">|</td><td>e A</td></tr><tr><td align="right">|</td><td>c A</td></tr><tr><td align="right">|</td><td>j A</td></tr><tr><td align="right">|</td><td>i A</td></tr><tr><td align="right">|</td><td>m A</td></tr><tr><td align="right">|</td><td>f A</td></tr><tr><td align="right">|</td><td>p A</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+A2 →</td><td> b B E</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+E →</td><td> s c</td></tr><tr><td align="right">|</td><td>c.</td></tr><tr><td>
+B →</td><td> k C </td></tr><tr><td align="right">|</td><td> e D.</td></tr><tr><td>
+C →</td><td> s H </td></tr><tr><td align="right">|</td><td> H.</td></tr><tr><td>
+D →</td><td> s V </td></tr><tr><td align="right">|</td><td> V.</td></tr><tr><td>
+V →</td><td> w V2.</td></tr><tr><td>
+V2 →</td><td> V3 V4</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+V3 →</td><td> i </td></tr><tr><td align="right">|</td><td> j </td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+V4 →</td><td> d V2 </td></tr><tr><td align="right">|</td><td> w V2.</td></tr><tr><td>
+H →</td><td> V H1 H2.</td></tr><tr><td>
+H1 →</td><td> s e</td></tr><tr><td align="right">|</td><td>e.</td></tr><tr><td>
+H2 →</td><td> s A7</td></tr><tr><td align="right">|</td><td>A7.</td></tr><tr><td>
+A7 →</td><td> f A8 f </td></tr><tr><td align="right">|</td><td> m A9 m </td></tr><tr><td align="right">|</td><td> d.</td></tr><tr><td>	
+A8 →</td><td> A10 A8</td></tr><tr><td align="right">|</td><td>m A8</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+A9 →</td><td> A10 A9</td></tr><tr><td align="right">|</td><td>f A9</td></tr><tr><td align="right">|</td><td>.</td></tr><tr><td>
+A10 →</td><td> w </td></tr><tr><td align="right">|</td><td> d </td></tr><tr><td align="right">|</td><td> s </td></tr><tr><td align="right">|</td><td> a </td></tr><tr><td align="right">|</td><td> c </td></tr><tr><td align="right">|</td><td> k </td></tr><tr><td align="right">|</td><td> e </td></tr><tr><td align="right">|</td><td> i </td></tr><tr><td align="right">|</td><td>j </td></tr><tr><td align="right">|</td><td>p.</td></tr><tr><td>
+</td></tr></tbody></table><table class="parse_table" border="1">
+<tbody><tr><td></td><th><terminal>$</terminal></th><th><terminal>p</terminal></th><th><terminal>j</terminal></th><th><terminal>i</terminal></th><th><terminal>e</terminal></th><th><terminal>k</terminal></th><th><terminal>c</terminal></th><th><terminal>a</terminal></th><th><terminal>s</terminal></th><th><terminal>d</terminal></th><th><terminal>w</terminal></th><th><terminal>f</terminal></th><th><terminal>m</terminal></th><th><terminal>b</terminal></th></tr>
+<tr><th><nonterm>A</nonterm></th>
+<td><nonterm>A</nonterm> → &amp;epsilon</td>
+<td><nonterm>A</nonterm> → <term>p</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>j</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>i</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>e</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>k</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>c</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>a</term> <nonterm>A2</nonterm> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>s</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>d</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>w</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>f</term> <nonterm>A</nonterm></td>
+<td><nonterm>A</nonterm> → <term>m</term> <nonterm>A</nonterm></td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>A2</nonterm></th>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → &amp;epsilon</td>
+<td><nonterm>A2</nonterm> → <term>b</term> <nonterm>B</nonterm> <nonterm>E</nonterm></td>
+</tr>
+<tr><th><nonterm>E</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>E</nonterm> → <term>c</term></td>
+<td>&nbsp;</td>
+<td><nonterm>E</nonterm> → <term>s</term> <term>c</term></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>B</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>B</nonterm> → <term>e</term> <nonterm>D</nonterm></td>
+<td><nonterm>B</nonterm> → <term>k</term> <nonterm>C</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>C</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>C</nonterm> → <term>s</term> <nonterm>H</nonterm></td>
+<td>&nbsp;</td>
+<td><nonterm>C</nonterm> → <nonterm>H</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>D</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>D</nonterm> → <term>s</term> <nonterm>V</nonterm></td>
+<td>&nbsp;</td>
+<td><nonterm>D</nonterm> → <nonterm>V</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>V</nonterm> → <term>w</term> <nonterm>V2</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V2</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>V2</nonterm> → <nonterm>V3</nonterm> <nonterm>V4</nonterm></td>
+<td><nonterm>V2</nonterm> → <nonterm>V3</nonterm> <nonterm>V4</nonterm></td>
+<td><nonterm>V2</nonterm> → &amp;epsilon</td>
+<td>&nbsp;</td>
+<td><nonterm>V2</nonterm> → &amp;epsilon</td>
+<td>&nbsp;</td>
+<td><nonterm>V2</nonterm> → &amp;epsilon</td>
+<td><nonterm>V2</nonterm> → <nonterm>V3</nonterm> <nonterm>V4</nonterm></td>
+<td><nonterm>V2</nonterm> → <nonterm>V3</nonterm> <nonterm>V4</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V3</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>V3</nonterm> → <term>j</term></td>
+<td><nonterm>V3</nonterm> → <term>i</term></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>V3</nonterm> → &amp;epsilon</td>
+<td><nonterm>V3</nonterm> → &amp;epsilon</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>V4</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>V4</nonterm> → <term>d</term> <nonterm>V2</nonterm></td>
+<td><nonterm>V4</nonterm> → <term>w</term> <nonterm>V2</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>H</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>H</nonterm> → <nonterm>V</nonterm> <nonterm>H1</nonterm> <nonterm>H2</nonterm></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>H1</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>H1</nonterm> → <term>e</term></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>H1</nonterm> → <term>s</term> <term>e</term></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>H2</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>H2</nonterm> → <term>s</term> <nonterm>A7</nonterm></td>
+<td><nonterm>H2</nonterm> → <nonterm>A7</nonterm></td>
+<td>&nbsp;</td>
+<td><nonterm>H2</nonterm> → <nonterm>A7</nonterm></td>
+<td><nonterm>H2</nonterm> → <nonterm>A7</nonterm></td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>A7</nonterm></th>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td><nonterm>A7</nonterm> → <term>d</term></td>
+<td>&nbsp;</td>
+<td><nonterm>A7</nonterm> → <term>f</term> <nonterm>A8</nonterm> <term>f</term></td>
+<td><nonterm>A7</nonterm> → <term>m</term> <nonterm>A9</nonterm> <term>m</term></td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>A8</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → <nonterm>A10</nonterm> <nonterm>A8</nonterm></td>
+<td><nonterm>A8</nonterm> → &amp;epsilon</td>
+<td><nonterm>A8</nonterm> → <term>m</term> <nonterm>A8</nonterm></td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>A9</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <nonterm>A10</nonterm> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → <term>f</term> <nonterm>A9</nonterm></td>
+<td><nonterm>A9</nonterm> → &amp;epsilon</td>
+<td>&nbsp;</td>
+</tr>
+<tr><th><nonterm>A10</nonterm></th>
+<td>&nbsp;</td>
+<td><nonterm>A10</nonterm> → <term>p</term></td>
+<td><nonterm>A10</nonterm> → <term>j</term></td>
+<td><nonterm>A10</nonterm> → <term>i</term></td>
+<td><nonterm>A10</nonterm> → <term>e</term></td>
+<td><nonterm>A10</nonterm> → <term>k</term></td>
+<td><nonterm>A10</nonterm> → <term>c</term></td>
+<td><nonterm>A10</nonterm> → <term>a</term></td>
+<td><nonterm>A10</nonterm> → <term>s</term></td>
+<td><nonterm>A10</nonterm> → <term>d</term></td>
+<td><nonterm>A10</nonterm> → <term>w</term></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody></table>
+<hr>
+
+Return home to <a target="_top" href="http://smlweb.cpsc.ucalgary.ca/start.html">enter a new grammar</a>.
+
+
+
+</body></html>

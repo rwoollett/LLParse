@@ -1,5 +1,5 @@
 #include "llparsetable.h"
-#include "../LLScanner/Common/io_utility.h"
+#include "Common/io_utility.h"
 #include <functional>
 
 namespace llparse {
