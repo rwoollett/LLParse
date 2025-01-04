@@ -521,8 +521,8 @@ int main()
   // if (filename.size() <= 0) {
   // 	return 0;
   // }
-  auto filename = "grammar.txt";
-  print({"Grammar.txt is the filename where the grammar CFG is found."});
+  auto filename = "ttgrammar_ver6.txt";
+  print({"ttgrammar_ver6.txt is the filename where the grammar CFG is found."});
   auto list = read_file(filename, true);
   llParseTable.load_context(list);
   std::vector<std::string> lines = llParseTable.ll_parsetable();
